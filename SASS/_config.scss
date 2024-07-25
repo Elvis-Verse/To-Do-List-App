@@ -1,0 +1,135 @@
+$background-color: rgb(118, 118, 212);
+$text-color: black;
+$border: 1.5px solid black;
+$border-radius: 10px;
+$shadow: 4px 3px 5px $text-color;
+$add-btn-color: rgb(32, 176, 32);
+$clear-btn-color: rgb(244, 45, 45);
+$button-text-color: #fff;
+$section-background-color: whitesmoke;
+$transition: all 0.7s ease-in-out;
+$font-weight: (
+  'regular': 200,
+  'medium': 400,
+  'bold': 800,
+);
+
+@mixin bp($size) {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@function weight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  background-color: $background-color;
+}
+main {
+  padding: 20%;
+}
+
+section {
+  border: $border;
+  border-radius: $border-radius;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+.offscreen {
+  position: absolute;
+  left: -10000rem;
+}
+button {
+  outline: none;
+  &:hover,
+  &:focus {
+    box-shadow: $shadow;
+  }
+}
+input {
+  outline: none;
+  &:hover,
+  &:focus {
+    box-shadow: $shadow;
+  }
+}
+li {
+  display: block;
+  width: 100%;
+  margin: 1.5rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.custom-checkbox {
+  position: relative;
+  min-width: 48px;
+  height: 48px;
+  border: $border;
+  margin-right: 1.5rem;
+
+  input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    min-width: 40px;
+  }
+
+  .span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    min-width: 40px;
+  }
+  .span::after {
+    content: '';
+    width: 20px;
+    height: 40px;
+    border: 2px solid white;
+    position: absolute;
+    left: 2rem;
+    bottom: 0.6rem;
+    opacity: 0;
+    transition: $transition;
+    transform: rotate(45deg);
+  }
+
+  input:checked ~ .span::after {
+    width: 20px;
+    height: 40px;
+    border-left-width: 0;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-top-width: 0;
+    border-left-color: $section-background-color;
+    border-top-color: $section-background-color;
+    border-right-color: green;
+    border-bottom-color: green;
+    opacity: 1;
+    transition: $transition;
+  }
+}
+
+.footer {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  color: #fff;
+}

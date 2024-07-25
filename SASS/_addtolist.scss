@@ -1,0 +1,28 @@
+.addtolist {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: $section-background-color;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 5%;
+  z-index: 1;
+
+  input[type='text'] {
+    padding: 0.5rem;
+    border: $border;
+    width: 90%;
+    height: 48px;
+    font-size: 1rem;
+    font-weight: weigh('regular');
+  }
+  button {
+    width: 48px;
+    height: 48px;
+    color: $button-text-color;
+    background-color: $add-btn-color;
+    font-size: 2rem;
+    border-radius: $border-radius;
+  }
+}

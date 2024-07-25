@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="../JS/script.js"></script>
+    <link rel="stylesheet" href="/dist/main.css/main.min.css" />
+    <title>My To-DO App</title>
+  </head>
+  <body>
+    <main>
+      <section class="addtolist">
+        <input
+          type="text"
+          name="addlist"
+          id="addlistinput"
+          placeholder="Add Item"
+          tabindex="0"
+        />
+        <label for="addlistinput" class="offscreen"
+          >Enter list item here:</label
+        >
+
+        <button
+          class="additem-btn"
+          aria-label="Add item to list button"
+          tabindex="0"
+        >
+          +
+        </button>
+      </section>
+      <section class="listdisplay">
+        <div class="listdisplay__titlebox">
+          <h1 class="listdisplay__header" tabindex="0">MY TO-DO</h1>
+          <button
+            class="clearlist-btn"
+            aria-label="Clear items on the list"
+            tabindex="0"
+          >
+            Clear
+          </button>
+        </div>
+        <hr />
+        <div class="listdisplay__item"></div>
+      </section>
+    </main>
+    <footer class="footer">&copy;&nbsp;Agba-Coder-Africa</footer>
+  </body>
+</html>
